@@ -65,6 +65,8 @@ export default class Options extends Component {
           </div>
         );
       }
+      const isHighlighted = JSON.stringify(option) === JSON.stringify(highlightedOption);
+
       return (
         <Option
           key={index}
@@ -74,7 +76,7 @@ export default class Options extends Component {
           disabled={optGroupDisabled}
           optionLabelPath={optionLabelPath}
           optionComponent={optionComponent}
-          isHighlighted={option === highlightedOption}
+          isHighlighted={isHighlighted}
           onOptionClick={() => {
             onOptionClick(option);
           }}
