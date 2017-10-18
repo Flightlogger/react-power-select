@@ -1,6 +1,6 @@
 # output
 lib/
-dist/
+#dist/
 
 # dependencies
 /node_modules
