@@ -137,6 +137,9 @@ export default class Select extends Component {
   };
 
   resetSearchAndClose = () => {
+    this.setState({
+      filteredOptions: null,
+    });
     this.search(null);
     this.close();
   };
