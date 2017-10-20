@@ -137,11 +137,11 @@ export default class Select extends Component {
   };
 
   resetSearchAndClose = () => {
+    this.search(null);
+    this.close();
     this.setState({
       filteredOptions: null,
     });
-    this.search(null);
-    this.close();
   };
 
   toggle = event => {
