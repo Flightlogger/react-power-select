@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import cx from 'classnames';
+import { isEqual } from 'lodash';
 import Option from './Option';
 import { getOptionIndex, isOptGroup } from './utils';
 
@@ -65,7 +66,7 @@ export default class Options extends Component {
           </div>
         );
       }
-      const isHighlighted = JSON.stringify(option) === JSON.stringify(highlightedOption);
+      const isHighlighted = isEqual(option, highlightedOption);
 
       return (
         <Option
