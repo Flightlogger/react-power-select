@@ -6,7 +6,6 @@ export default function TriggerWrapper({
   value,
   select,
   showClear,
-  onClick,
   onClearClick,
   triggerLHSComponent,
   triggerRHSComponent,
@@ -17,22 +16,22 @@ export default function TriggerWrapper({
       className={cx('PowerSelect__Trigger', {
         'PowerSelect__Trigger--empty': !value,
       })}
-      onClick={onClick}
     >
-      {triggerLHSComponent &&
+      {triggerLHSComponent && (
         <div className="PowerSelect__Trigger__LHS">
           {renderComponent(triggerLHSComponent, { select })}
-        </div>}
+        </div>
+      )}
 
       {children}
 
-      {triggerRHSComponent &&
+      {showClear && <span className="PowerSelect__Clear" onClick={onClearClick} />}
+      <span className="PowerSelect__TriggerStatus" />
+      {triggerRHSComponent && (
         <div className="PowerSelect__Trigger__RHS">
           {renderComponent(triggerRHSComponent, { select })}
-        </div>}
-      {showClear &&
-        <span className="PowerSelect__Clear" onClick={onClearClick} />}
-      <span className="PowerSelect__TriggerStatus" />
+        </div>
+      )}
     </div>
   );
 }

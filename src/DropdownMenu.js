@@ -26,6 +26,7 @@ export default class DropdownMenu extends Component {
       handleKeyDown,
       highlightedOption,
       minWidth,
+      onRef,
       beforeOptionsComponent,
       afterOptionsComponent,
       ...otherProps
@@ -38,18 +39,13 @@ export default class DropdownMenu extends Component {
           handleKeyDown(event, highlightedOption);
         }}
         style={{ minWidth }}
+        ref={dropdownMenu => this.props.onRef(dropdownMenu)}
       >
-        {beforeOptionsComponent &&
-          renderComponent(beforeOptionsComponent, { select })}
+        {beforeOptionsComponent && renderComponent(beforeOptionsComponent, { select })}
 
-        <Options
-          select={select}
-          highlightedOption={highlightedOption}
-          {...otherProps}
-        />
+        <Options select={select} highlightedOption={highlightedOption} {...otherProps} />
 
-        {afterOptionsComponent &&
-          renderComponent(afterOptionsComponent, { select })}
+        {afterOptionsComponent && renderComponent(afterOptionsComponent, { select })}
       </div>
     );
   }

@@ -27,9 +27,17 @@
 }
 
 .PowerSelect--open {
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-  border-bottom: 0;
+  //Tether specific style changes to suport auto reposition of drop down menu
+  &.tether-target-attached-top {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    border-top: 0;
+  }
+  &.tether-target-attached-bottom {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom: 0;
+  }
 
   .PowerSelect__TriggerStatus::before {
     transform: rotate(-180deg);
@@ -41,7 +49,6 @@
   height: 34px;
   overflow: hidden;
   white-space: nowrap;
-  text-overflow: ellipsis;
 }
 
 .PowerSelect__Menu {
@@ -124,7 +131,7 @@
   height: 34px;
   border: none;
   cursor: pointer;
-  padding: 4px 22px 4px 8px;
+  padding: 4px 8px 4px 8px;
   font-size: inherit;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
@@ -141,18 +148,11 @@
   white-space: nowrap;
 }
 
-.PowerSelect__Trigger__LHS {
-  padding-left: 8px;
-  padding-right: 4px;
-}
-
-.PowerSelect__Trigger__RHS {
-  padding-right: 4px;
-  padding-left: 4px;
-}
-
 .PowerSelect__TriggerLabel {
-  padding: 6px 22px 6px 8px;
+  padding: 6px 8px;
+  overflow: hidden;
+  max-width: 0px;
+  text-overflow: ellipsis;
 }
 
 .PowerSelect__Trigger__LHS + .PowerSelect__TriggerLabel {
@@ -200,7 +200,6 @@
   vertical-align: middle;
   height: 34px;
 }
-
 
 // MultiSelect
 .PowerSelectMultiple__OptionsContainer {

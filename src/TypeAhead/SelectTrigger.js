@@ -11,9 +11,10 @@ export default class SelectTrigger extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    let value = nextProps.searchTerm !== null
-      ? nextProps.searchTerm
-      : this.getValueFromSelectedOption(nextProps);
+    let value =
+      nextProps.searchTerm !== null
+        ? nextProps.searchTerm
+        : this.getValueFromSelectedOption(nextProps);
     this.setState({
       value,
     });
@@ -45,6 +46,7 @@ export default class SelectTrigger extends Component {
       select,
       placeholder,
       disabled,
+      autoFocus,
       handleOnChange,
       handleKeyDown,
       handleOnFocus,
@@ -63,6 +65,7 @@ export default class SelectTrigger extends Component {
             placeholder={placeholder}
             value={value}
             disabled={disabled}
+            autoFocus={autoFocus}
             onChange={this.handleInputChange}
             onKeyDown={handleKeyDown}
             onFocus={handleOnFocus}
