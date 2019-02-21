@@ -441,6 +441,7 @@ Select.defaultProps = {
   selectedOptionComponent: null,
   beforeOptionsComponent: null,
   afterOptionsComponent: null,
+  preventFocusOnOpen: false,
   matcher: matcher,
   onFocus: noop,
   onBlur: noop,

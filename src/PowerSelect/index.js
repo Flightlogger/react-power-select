@@ -9,7 +9,13 @@ export default class PowerSelect extends Component {
   };
 
   render() {
-    let { searchEnabled, searchPlaceholder, beforeOptionsComponent, ...rest } = this.props;
+    let {
+      searchEnabled,
+      searchPlaceholder,
+      beforeOptionsComponent,
+      preventFocusOnOpen,
+      ...rest
+    } = this.props;
     let BeforeOptionsComponent = beforeOptionsComponent;
 
     return (
@@ -21,6 +27,7 @@ export default class PowerSelect extends Component {
             searchPlaceholder={searchPlaceholder}
             beforeOptionsComponent={beforeOptionsComponent}
             onChange={this.handleSearchInputChange}
+            preventFocusOnOpen={preventFocusOnOpen}
           />
         }
         {...rest}
